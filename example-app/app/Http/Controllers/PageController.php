@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function home() {
+        $home = Home::all();
         return view ('pages/home');
     }
 
