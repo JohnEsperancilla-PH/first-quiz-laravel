@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/about-me', function () {
-    return view('about-me');
+    return view('pages/about-me');
 });
+
+// PORTFOLIO ROUTES
+
+Route::get('/', [PageController::class, 'home'])->name('home'); // Homepage
+Route::get('/skills', [PageController::class, 'skills'])->name('skills'); // Skills page
+Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery'); // Gallery page
