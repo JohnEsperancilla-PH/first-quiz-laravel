@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +16,3 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/about-me', function () {
-    return view('pages/about-me');
-});
-
-Route::get('/skills', function () {
-    return view('skills');
-});
-
-// PORTFOLIO ROUTES
-
-Route::get('/', [PageController::class, 'home'])->name('home'); // Homepage
-Route::get('/skills', [PageController::class, 'skills'])->name('skills'); // Skills page
-Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery'); // Gallery page
